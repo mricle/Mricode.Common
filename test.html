@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="jquery-2.1.4.min.js"></script>
+    <script src="common.js"></script>
+</head>
+<body>
+    <div>
+        <div style="float:left; width:50%;">
+            <textarea id="json" style="width:400px;height:400px;">
+                {
+                name: 'test',
+                address: {
+                city: 'shanghai'
+                }
+                }
+            </textarea>
+            <button type="button" style="float:right;" id="run">run</button>
+        </div>
+        <div style="float:left; width:50%;">
+            <form id="form">
+                <div>
+                    name<input type="text" name="name" value="" />
+                </div>
+                <div>
+                    address.city<input type="text" name="address.city" value="" />
+                </div>
+                <div>
+                    age<input type="radio" name="age" value="30" />
+                    age<input type="radio" name="age" value="20" />
+                </div>
+                <div>
+                    checkbox<input type="checkbox" name="checkbox" value="shanghai" />
+                    checkbox<input type="checkbox" name="checkbox" value="beijing" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        var user = {
+            name: 'test',
+            address: {
+                city: 'shanghai'
+            },
+            age: 30,
+            checkbox: 'shanghai'
+        };
+        run.onclick = function () {
+            //var data = JSON.parse(json.value);
+            utility.renderFormData("#form", user);
+        }
+    </script>
+</body>
+</html>
